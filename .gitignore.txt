@@ -1,0 +1,90 @@
+# =====================================================
+# Root .gitignore (rename this file to .gitignore)
+# =====================================================
+
+# ---------- Datasets (never commit) ----------
+# Anchored with a leading slash so they do NOT match the
+# source package ml/src/data/, which is real code.
+/data/
+/ml/data/
+/datasets/
+/ml/datasets/
+*.npy
+*.npz
+*.wav
+*.flac
+*.mp3
+
+# Exception: small custom-hardware samples are committed on purpose
+!hardware/test_recordings/
+!hardware/test_recordings/*.wav
+
+# ---------- ML outputs ----------
+mlruns/
+mlartifacts/
+runs/
+logs/
+checkpoints/
+*.h5
+*.keras
+*.pt
+*.pth
+*.ckpt
+
+# Exported models: commit only the agreed .tflite files
+ml/artifacts/*
+!ml/artifacts/README.md
+!ml/artifacts/*.tflite
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.ipynb_checkpoints/
+.pytest_cache/
+*.egg-info/
+.mypy_cache/
+
+# ---------- Flutter / Dart (app/) ----------
+app/.dart_tool/
+app/.pub-cache/
+app/.pub/
+app/build/
+app/.flutter-plugins
+app/.flutter-plugins-dependencies
+app/.packages
+app/android/.gradle/
+app/android/local.properties
+app/android/key.properties
+app/android/**/GeneratedPluginRegistrant.java
+app/ios/Pods/
+app/ios/.symlinks/
+app/ios/Flutter/Generated.xcconfig
+app/ios/Flutter/flutter_export_environment.sh
+*.jks
+*.keystore
+
+# ---------- Firmware (hardware/) ----------
+hardware/**/.pio/
+hardware/**/.vscode/.browse.c_cpp.db*
+hardware/**/.vscode/c_cpp_properties.json
+hardware/**/.vscode/launch.json
+hardware/**/build/
+hardware/**/*.elf
+hardware/**/*.bin
+hardware/**/*.hex
+
+# ---------- Secrets ----------
+.env
+.env.*
+*.pem
+secrets/
+
+# ---------- Editors and OS ----------
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
