@@ -14,6 +14,7 @@
 *.wav
 *.flac
 *.mp3
+classification-of-heart-sound-recordings-the-physionet-computing-in-cardiology-challenge-2016-1.0.0/
 
 # Exception: small custom-hardware samples are committed on purpose
 !hardware/test_recordings/
@@ -46,6 +47,9 @@ env/
 .pytest_cache/
 *.egg-info/
 .mypy_cache/
+.venv-ML/
+*.joblib 
+*.parquet
 
 # ---------- Flutter / Dart (app/) ----------
 app/.dart_tool/
